@@ -9,7 +9,7 @@ services:
     image: lapel
     restart: unless-stopped
     ports:
-      - 7075:80
+      - 7000:80
     working_dir: /var/www/html
     volumes:
       - .:/var/www/html
