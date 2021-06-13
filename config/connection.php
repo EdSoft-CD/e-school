@@ -2,10 +2,10 @@
 
 function db_connect()
 {
-    include(dirname(__FILE__) . "/config.php");
+    require __DIR__ . "/config.php";
 
     try {
-        $connection = new PDO($dsn, $username, $password, $options);
+        $connection = new PDO(DSN, DB_USER, DB_PASSWORD, $options);
     } catch (PDOException $e) {
         printf(
             "Echec de connexion à la base de données : %s\n",
@@ -13,5 +13,6 @@ function db_connect()
         );
         exit();
     }
+    
     return $connection;
 }
